@@ -1,0 +1,9 @@
+    <%= comment.content %>
+    
+    <ul>    <% comments_by_parent_id[comment.id].each do |child_comment| %>
+                 
+        <li>
+                    <%= render "comment", comment: child_comment, comments_by_parent_id: comments_by_parent_id %>
+        </li>
+            <% end %>
+    </ul>
